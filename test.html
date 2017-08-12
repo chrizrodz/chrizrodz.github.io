@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<title>W3.CSS Template</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body { background-image:url("TILED2.jpg")}
+body { 
+    background-image: url('LATECH.png');
+    background-attachment: fixed;
+    background-size:auto 100%;
+}
+.head_div {
+	background-image:url("TESTTUBE.jpg");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+.academics { 
+    background-image: url('academics.png');
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-position: center; 
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.content img {
+    margin-right: 15px;
+    float: left;
+    width: 30%;
+}
+	</style>
+	<body class="w3-light-grey">
+
+		<!-- Page Container -->
+		<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+
+
+
+			<!-- Left Column -->
+			<div class="head_div w3-display-container w3-container w3-card-2 w3-white w3-margin-bottom w3-padding-16" style="display:block;margin:auto;width:70%">
+
+					<img class="w3-card-2" src="ChrisRodriguez.jpg" style="width:50%" alt="Avatar">
+					<div style="margin:10px 20px" class="w3-display-topright w3-container w3-text-black">
+						<h2 style="font-size:35px">Christopher Rodriguez</h2>
+						<h2 style="font-size:15px">Bioinformatics and Computational Analysis</h2>
+					</div>
+			</div>
+
+			<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+				<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-grey"></i>Academics</h2>		
+				<h3 style="margin:0px">Junior</h3>
+				<p style="margin-left: 10px;margin-top: 0px;color: gray;">I am a third year student expected to graduate Spring of 2019</p>
+				<h3 style="margin:0px">Louisiana Tech University</h3>
+				<p style="margin-left: 10px;margin-top: 0px;color: gray;">LA Tech is an accredited university in Ruston, Louisiana</p>
+				<h3 style="margin:0px">3.96 GPA</h3>
+				<p style="margin-left: 10px;margin-top: 0px;color: gray;">I am a dedicated student with a strong knowledge of physics, math, computer science, and engineering</p>
+				<h3 style="margin:0px">Cyber Engineer</h3>
+				<p style="margin-left: 10px;margin-top: 0px;color: gray;">A cross disciplinary curriculum between Electrical Engineering and Computer Science</p>
+				<h3>Mathematics Minor</h3>
+				<p style="margin-left: 10px;margin-top: 0px;color: gray;">A cross disciplinary curriculum between Electrical Engineering and Computer Science</p>
+			</div>
+
+
+			<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+				<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-grey"></i>Research</h2>
+				<div class="content">
+				  <img src="HIV.png">
+				    <h3>HIV Nef Analysis</h3>
+				    <p>I wrote a pipeline to submit amino acid sequences of the Nef protein of HIV to the I-TASSER database in order to get an estimated 3D structure of the protein. Once the job was completed, my script downloaded the resulting pdb file and cleaned it. I then automatically ran the protein through an NAMD simulation where the protein is hydrated in an ionized solution, and then left to move freely and fold for 60000 iterations. At the end of this process, I pulled out a more accurate 3D model of the protein for further analysis. This work was done to try to enumerate the differences between HIV samples found in the brain versus HIV samples taken elsewhere.</p>
+				    </div>
+				<div class="content">
+				  <img src="DISULFIDE.png">
+                                    <h3>Predicting Disfulide Bonds</h3>
+                                    <p>I paired up with a PhD student from LA Tech to try to increase the accuracy of Disulfide Bond prediction techniques that currently exist. In proteins, the amino acid cysteine forms a strong disulfide bond with other cysteines. If one can predict which cysteines will bond in a protein, predicting the 3D structure of that protein becomes much easier. We ran PSI-BLAST on the amino acids neighboring the cysteines to generate a PSSM to use as features for our data mining models. In addition to the PSSM, we also got features from the predicted secondary structure, euclidean distance off of a Modeller prediction, and Correlated Mutations. Once we gathered all our features, we ran the data through several data mining models such as Neural Nets, SVM, Random Forests, KNN, etc. Our methods achieved record accuracies.</p>
+                                    </div>
+
+				<div class="w3-container">
+					<h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+					<p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+					<hr>
+				</div>
+				<div class="w3-container">
+					<h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+					<h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+				</div>
+			</div>
+
+			<div class="w3-container w3-card-2 w3-white">
+				<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>Education</h2>
+				<div class="w3-container">
+					<h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+					<h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+					<p>Web Development! All I need to know in one place</p>
+					<hr>
+				</div>
+				<div class="w3-container">
+					<h5 class="w3-opacity"><b>London Business School</b></h5>
+					<h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+					<p>Master Degree</p>
+					<hr>
+				</div>
+				<div class="w3-container">
+					<h5 class="w3-opacity"><b>School of Coding</b></h5>
+					<h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+					<p>Bachelor Degree</p><br>
+				</div>
+			</div>
+
+
+			<!-- End Grid -->
+		</div>
+
+		<!-- End Page Container -->
+		</div>
+
+		<footer class="w3-container w3-grey w3-center w3-margin-top">
+			<p>Find me on social media.</p>
+			<i class="fa fa-facebook-official w3-hover-opacity"></i>
+			<i class="fa fa-instagram w3-hover-opacity"></i>
+			<i class="fa fa-snapchat w3-hover-opacity"></i>
+			<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+			<i class="fa fa-twitter w3-hover-opacity"></i>
+			<i class="fa fa-linkedin w3-hover-opacity"></i>
+			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+		</footer>
+
+	</body>
+</html>
