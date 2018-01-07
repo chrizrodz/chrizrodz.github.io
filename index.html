@@ -8,9 +8,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-body { background-image:url("TILED2.jpg")}
 body { 
-    background-image: url('LATECH.png');
+    background-image: url('img/LATECH.png');
     background-attachment: fixed;
     background-size:auto 100%;
 }
@@ -20,13 +19,13 @@ table, th, td {
 	border-collapse: collapse;
 }
 .head_div {
-	background-image:url("TESTTUBE.jpg");
+	background-image:url("img/TESTTUBE.jpg");
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
 
 .academics { 
-    background-image: url('academics.png');
+    background-image: url('img/academics.png');
     background-repeat: no-repeat;
     background-size: 70px;
     background-position: center; 
@@ -64,7 +63,7 @@ table, th, td {
 			<!-- Left Column -->
 			<div class="head_div w3-display-container w3-container w3-card-2 w3-white w3-margin-bottom w3-padding-16" style="display:block;margin:auto;width:70%">
 
-					<img class="w3-card-2" src="ChrisRodriguez.jpg" style="width:50%" alt="Avatar">
+					<img class="w3-card-2" src="img/ChrisRodriguez.jpg" style="width:50%" alt="Avatar">
 					<div style="margin:10px 20px" class="w3-display-topright w3-container w3-text-black">
 						<h2 style="font-size:35px">Christopher Rodriguez</h2>
 						<h2 style="font-size:15px">Bioinformatics and Computational Analysis</h2>
@@ -90,31 +89,31 @@ table, th, td {
 				<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-grey"></i>Research</h2>
 
  				<div class="content">
- 				  <img src="HIV.png">
+ 				  <img src="img/HIV.png">
 						<h3>Brain-specific HIV Nef</h3>
 						<p>During my work for BioinfoExperts, I wrote a pipeline to submit amino acid sequences of the Nef protein of HIV to the I-TASSER database in order to get an estimated 3D structure of the protein. Once the job was completed, my script downloaded the resulting pdb file and cleaned it. I then automatically ran the protein through an NAMD simulation where the protein is hydrated in an ionized solution, and then left to move freely and fold for 60000 iterations. At the end of this process, I pulled out a more accurate 3D model of the protein for further analysis. This work was done to try to enumerate the differences between HIV samples found in the brain versus HIV samples taken elsewhere.</p>
  				</div>
 				
  				<div class="content">
-				  <img src="HPV.png">
+				  <img src="img/HPV.png">
 						<h3>Cluster Visualization</h3>
                         <p>I am currently developing cluster visualization software for HPV infections also under BioinfoExperts. The program takes a FASTA list of HPV sequences and finds the tn93 distance between each sequence. The program then uses hivtrace's clustering algorithm to group the sequences at different tolerance thresholds. The program then provides an easy-to-use interactive environment for a researcher to visually determine how sequences are connected. You can group the sequences by any class you want (city, infection vector, etc) so you can see how this meta data affects the distances between sequences. You also have options to batch and reduce your data on the fly so that large datasets are both easy for a human to visualize and easy for a computer to render. You can view multiple cluster thresholds at once so that you can determine roughly the degree to which the sequencese cluster.</p>
                 </div>
 				
 				<div class="content">
-				  <img src="DISULFIDE.png">
+				  <img src="img/DISULFIDE.png">
 						<h3>Predicting Disfulide Bonds</h3>
 						<p>I paired up with John Mapes, a PhD student from LA Tech, to try to increase the accuracy of Disulfide Bond prediction techniques that currently exist. In proteins, the amino acid cysteine forms a strong disulfide bond with other cysteines. If one can predict which cysteines will bond in a protein, predicting the 3D structure of that protein becomes much easier. We ran PSI-BLAST on the amino acids neighboring the cysteines to generate a PSSM to use as features for our data mining models. In addition to the PSSM, we also got features from the predicted secondary structure, euclidean distance off of a Modeller prediction, and Correlated Mutations. Once we gathered all our features, we ran the data through several data mining models such as Neural Nets, SVM, Random Forests, KNN, etc. Our methods achieved record accuracies.</p>
                 </div>
 
 				<div class="content">
-				  <img src="uDROP.png">
+				  <img src="img/uDROP.png">
 						<h3>μ-DROP</h3>
 						<p>As part of my REU at Boston University during my sophomore summer, I developed Micro Droplet Rate/Region Ocular Processor. This program takes videos of microfluidic droplet generators and automatically calculates the droplet generation rate and the droplet diameters. It operates by applying Canny's Edge detection algorithm to each frame and finding the average pixel value. The graph of these average pixel values is a sine wave. The program smoothes this resulting wave and finds the period of it in order to calculate the droplet generation rate. A rectangle is fit to the frames that correspond to the local maxes of the wave. The length of these rectangles is taken as the diameter of the droplet.</p>
                 </div>
 
 				<div class="content">
-				  <img src="INTERP.png">
+				  <img src="img/INTERP.png">
 						<h3>DAFD</h3>
 						<p>For the second part of my REU at Boston University, I developed a program called DAFD (Design Automation based on Fluid Dynamics). The goal of DAFD was to take a user's desired droplet generation rate and droplet diameter and suggest chip parameters to build a droplet generator that would correctly produce their droplets. To achieve this, we made 2500 droplet generators with known chip parameters and used μ-DROP to analyze the droplet generation rate and the average droplet diameter. Then, we fit two interpolation curves (one for generation rate and one for droplet size) to the collected data set. We then used a minimization algorithm to minimize the error of our solution set to both the rate curve and the size curve.</p>
                 </div>
@@ -123,32 +122,32 @@ table, th, td {
 			<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
 				<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-grey"></i>Awards & Leadership</h2>
 				  <div class="content2">
-				   <img src="IEEE.jpg">
+				   <img src="img/IEEE.jpg">
 				   <h3>LA Tech IEEE Vice President</h3>
 				   <p>I currently serve as the VP for our local branch of the Institute of Electric and Electronic Engineers. I am constantly striving to get undergraduate students at LA Tech to become involved with Electrical Engineering and Computer Science. Our organization hosts educational competitions like the global IEEE XTREME Programming Competition and invites researchers and professionals to give presentations and network with students.</p>
 				 </div>
 				 <div class="content2">
-				   <img src="COES.jpg">
+				   <img src="img/COES.jpg">
 				   <h3>E&amp;S Magazine Staff Writer</h3>
 				   <p>I write articles for the Engineering and Science Magazine at LA Tech. My article for the 2017 Winter edition discusses Generative Adversarial Networks and other forms of generative machine learning. My goal in writing for the E&amp;S magazine is to expose our student body to more advanced concepts in Computer Science in an accessible and non-intimidating way.</p>
 				 </div>
 				 <div class="content2">
-				   <img src="VEX.jpg">
+				   <img src="img/VEX.jpg">
 				   <h3>VEX Robotics Captain</h3>
 				   <p>I currently serve as the team captain for the VEX Robotics team at Louisiana Tech. We design, build, and program a robot in order to compete in VEX sponsored competitions aroudn the country. The organization exists to provide hands-on experience to undergraduates who are interested in robotics and engineering.</p>
 				 </div>
 				 <div class="content2">
-				   <img src="NPS.png">
+				   <img src="img/NPS.png">
 				   <h3>Presidential Gold Service Award for NPS Service</h3>
 				   <p>I received the Presidential Gold Service Award for providing over 250 hours of volunteer service to the National Park Service. I have assisted the NPS with marsh grass planting on the South Louisiana coast, educational summer camps, fights against pollution, water quality testing, trail clearing after hurricanes, and clearing of non-native invasive plants from our bayous. I am strongly committed to preserving America's wetlands and ameliorating the effects of coastal erosion.</p>
 				 </div>
 				 <div class="content2">
-				   <img src="ABRCMS.jpg">
+				   <img src="img/ABRCMS.jpg">
 				   <h3>Oustanding Computational Biology Presentation at ABRCMS</h3>
 				   <p>I presented a poster presentation for my research at Boston University at ABRCMS (Annual Biomedical Research Conference for Minority Students) in Pheonix, Arizona. I received a $300 award for the presentation.</p>
 				 </div>
 				 <div class="content2">
-				   <img src="XTREME.png">
+				   <img src="img/XTREME.png">
 				   <h3>IEEE XTREME 24 Hour Programming Challenge: Top Ten in Nation</h3>
 				   <p>In addition to hosting the IEEE XTREME event at my school and giving tutorials to the other undergraduates on the types of problems they should expect, I also participated in the event with 2 other students. We made top ten in nation and top 200 globally (out of 3000+ teams). 
 				   
