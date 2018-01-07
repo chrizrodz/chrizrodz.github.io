@@ -1,0 +1,74 @@
+<html>
+
+<title>Internship List</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="DisplayList.js"></script>
+
+<style>
+
+body { background-image:url("img/TILED2.jpg")}
+
+
+table, th, td {
+border: 1px solid black;
+padding: 15px;
+border-collapse: collapse;
+}
+
+.content {
+width: 100%;
+padding: 20px;
+overflow: hidden;
+}
+.content2 {
+width: 100%;
+padding: 20px;
+overflow: hidden;
+}
+.content img {
+margin-right: 15px;
+float: left;
+width: 30%;
+}
+.content2 img {
+margin-right: 15px;
+float: left;
+width: 14%;
+}
+</style>
+<body class="w3-light-grey">
+
+		
+	<div class="w3-container w3-card-2 w3-white w3-margin-bottom opp">
+		<p>On this page, I have listed REUs and internships that professors at LA Tech have asked me to share. Feel free to apply to any of these, but please remember that this is not a complete list of every opportunity out there. The <a href="https://www.nsf.gov/crssprgm/reu/reu_search.jsp">NSF</a> has a great listing of REUs if you can't find something here. Also, Google is always your friend.</p>
+		<p>Please get the <a href="intern_list.tsv">TSV</a> of this data to navigate through it easier.</p>
+		<p>Also, please email me with opportunities for students at chrizrodz@gmail.com or cwr023@latech.edu.</p>
+		<p>Good Luck!</p>
+		<select id="sort_val">
+			<option value="Name">Name</option>
+			<option value="Deadline">Deadline</option>
+			<option value="Pay">Pay</option>
+		</select>
+		<button onclick="userSort()">Sort</button>
+	</div>
+
+        <div class="w3-content w3-margin-top" style="max-width:50%;" id="listings">
+
+        </div>
+
+        <footer class="w3-container w3-grey w3-center w3-margin-top">
+                <p>Contact me at <a href="mailto:chrizrodz@gmail.com">chrizrodz@gmail.com</a> or <a href="mailto:cwr023@latech.edu">cwr023@latech.edu</a></p>
+                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </footer>
+
+
+</body>
+</html>
