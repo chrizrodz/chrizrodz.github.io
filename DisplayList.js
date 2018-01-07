@@ -30,9 +30,7 @@ function processData(allText)
 		}
 		data_dicts.push(dict);
 	}
-	console.log(data_dicts);
 	ordered_list = sortOnKey(data_dicts,"Name",true);
-	console.log(ordered_list);
 	makeHTMLElements(data_dicts,ordered_list)
 }
 
@@ -109,6 +107,5 @@ function makeHTMLElements(data_dicts,ordered_list)
 function userSort()
 {
 	key = document.getElementById("sort_val").value;
-	console.log(sortOnKey(data_dicts,key,true));
 	makeHTMLElements(data_dicts,sortOnKey(data_dicts,key,true));
 }
