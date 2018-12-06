@@ -96,44 +96,63 @@ table, th, td {
  				<div class="content">
  				  <img src="img/HIV.png">
 						<h3>Brain-specific HIV Nef</h3>
-						<p>During my work for BioinfoExperts, I wrote a pipeline to submit amino acid sequences of the Nef protein of HIV to the I-TASSER database in order to get an estimated 3D structure of the protein. Once the job was completed, my script downloaded the resulting pdb file and cleaned it. I then automatically ran the protein through an NAMD simulation where the protein is hydrated in an ionized solution, and then left to move freely and fold for 60000 iterations. At the end of this process, I pulled out a more accurate 3D model of the protein for further analysis. This work was done to try to enumerate the differences between HIV samples found in the brain versus HIV samples taken elsewhere.</p>
+						<p>I developed molecular dynamics scripts for a bioinformatics company called BioInfoExperts which needed help for a study on HIV Associated Neurological Disorders. I started creating scripts to submit primary sequences of Nef proteins into the I-TASSER server and download the resulting estimated 3D structure. Then, I set up a pipeline to run my own TCL scripts on these structures which ionized and hydrated the protein and then ran a NAMD molecular simulation over the resulting ionized complex. The rest of the team from BioInfoExperts extracted features from both the 3D structure and the 1D sequence of the protein and used them in an evolved neural network. The final classifier, which separated brain from non-brain Nef sequences, had a test accuracy of 84.3%. Feature selection was also performed by the team to provide insight into differences between Nef sequences located in the brain versus sequences taken elsewhere. This work was eventually published in the Journal of Neurovirology.</p>
+ 				</div>
+
+ 				<div class="content">
+ 				  <img src="img/HIV.png">
+						<h3>Genetic Variation of HCV</h3>
+						<p>I worked with Rebecca Rose of BioInfoExperts on a study of drug users with HCV. She was using maximum-likelihood phylogenies to assess evolutionary relationships among the samples gathered. Based on the analysis, HCV infections seemed to have extremely variable mutation rates. However, a control was needed to confirm these results. I created software to mutate samples in the population according to a molecular clock. The program automatically replicated meta-data from the population (like patient ID and dates) and recreated the dataset as if a standard, constant mutation rate drove the virus mutations. The simulated dataset that my program output was put through the same pipeline as the real dataset. Then, a comparison could be made between the real behavior of the virus and the behavior of the virus assuming that it mutated according to a molecular clock. This work is currently being reviewed after submission to Infection, Genetics, and Evolution.</p>
+ 				</div>
+
+ 				<div class="content">
+ 				  <img src="img/HIV.png">
+						<h3>HIV VOAs</h3>
+						<p>BioInfoExperts was contracted to help with a project on quantifying the latent HIV reservoir using sequence diversity. Viral Outgrowth Assays (VOAs) separate T-cells into separate wells and then activates them so that latently infected cells will begin producing the virus. However, sometimes multiple infected cells can end up in the same well. I wrote a script to help researchers decide which wells had a single prominent sequence. The script would take in the raw reads for each well, along with meta-data from the Illumina run stored in a spreadsheet. Then, it would calculate prominence for each of the sequences, compare this to the data from the spreadsheet, and would count sequences passing user-defined thresholds. The prominent sequences were saved and aligned to a reference genome. Phylogenetic trees were calculated for these sequences and returned to the user. The paper utilizing this work was published in the Journal for Retrovirology.</p>
  				</div>
 				
  				<div class="content">
 				  <img src="img/HPV.png">
-						<h3>Cluster Visualization</h3>
-                        <p>I am currently developing cluster visualization software for HPV infections also under BioinfoExperts. The program takes a FASTA list of HPV sequences and finds the tn93 distance between each sequence. The program then uses hivtrace's clustering algorithm to group the sequences at different tolerance thresholds. The program then provides an easy-to-use interactive environment for a researcher to visually determine how sequences are connected. You can group the sequences by any class you want (city, infection vector, etc) so you can see how this meta data affects the distances between sequences. You also have options to batch and reduce your data on the fly so that large datasets are both easy for a human to visualize and easy for a computer to render. You can view multiple cluster thresholds at once so that you can determine roughly the degree to which the sequencese cluster.</p>
-                </div>
+						<h3>FoxSeq</h3>
+						<p>I developed cluster visualization software for MRSA infections under BioInfoExperts. The program takes a FASTA list of HPV sequences and finds the TN93 distance between each sequence. The program clusters these sequences using various techniques like spectral, hierarchical, and k-means. The program then provides an easy-to-use interactive environment for a researcher to visually determine how sequences are connected. You can group the sequences by any class you want (city, infection vector, etc) so you can see how this meta data affects the distances between sequences. You also have options to batch and reduce your data on the fly so that large datasets are both easy for a human to visualize and easy for a computer to render. You can view multiple cluster thresholds at once so that you can determine roughly the degree to which the sequences cluster. I am currently working on creating an Amazon Web Service server for the software which takes raw MRSA WGS reads from an Illumina sequencing machine, cleans them up and aligns them to a reference genome using Trimmomatic and Bowtie, finds SNPs and indels using GATK, and then compiles them into a FASTA file which can be fed to the cluster visualization software I previously built.</p>
+				</div>
+
 				
 				<div class="content">
 				  <img src="img/DISULFIDE.png">
-						<h3>Predicting Disfulide Bonds</h3>
-						<p>I paired up with John Mapes, a PhD student from LA Tech, to try to increase the accuracy of Disulfide Bond prediction techniques that currently exist. In proteins, the amino acid cysteine forms a strong disulfide bond with other cysteines. If one can predict which cysteines will bond in a protein, predicting the 3D structure of that protein becomes much easier. We ran PSI-BLAST on the amino acids neighboring the cysteines to generate a PSSM to use as features for our data mining models. In addition to the PSSM, we also got features from the predicted secondary structure, euclidean distance off of a Modeller prediction, and Correlated Mutations. Once we gathered all our features, we ran the data through several data mining models such as Neural Nets, SVM, Random Forests, KNN, etc. Our methods achieved record accuracies.</p>
-                </div>
+						<h3>Predicting Disulfide Bond Patterns</h3>
+						<p>I paired up with John Mapes, a PhD student from LA Tech, to use machine learning to predict disulfide bond connectivity patterns. Predicting this pattern of disulfide bonds makes calculating protein folding easier. We created a new feature called the Local Similarity Matrix (LSM), a modification of the position specific scoring matrix (PSSM) in which we normalize the row entries and multiply the probabilities by the corresponding entry in the BLOSUM62’s diagonal. The LSM and various other features were plugged into a machine learning algorithm which outputs a confidence score for each potentially bonding pair of cysteines. Edmond-Gabow’s algorithm was then applied to the weighted graph to get a prediction for the most likely bonding pattern. We scored around 5 percent higher than other prior works on a variety of datasets. During my work at the DMRL, I was introduced to a variety of algorithms like Bayesian Classification, SVMs, Random Forests, and Neural Networks, along with gaining an appreciation for academic research and mathematical modelling in general. The paper we wrote is currently being revised for publication in IEEE/ACM Transactions on Computational Biology and Bioinformatics.</p>
+				</div>
+
+				<div class="content">
+				  <img src="img/DISULFIDE.png">
+						<h3>Predicting Oxidation States of Cysteines</h3>
+						<p>When I returned from Boston, I reunited with John Mapes of the DMRL to extend our previous work with another original feature and to apply the research to a new problem. He came up with the idea for the Residue Adjacency Matrix (RAM), and we refined and implemented the idea together. The RAM matrix is an n by 20 matrix that describes the indicial difference between the cysteine and the n-nearest instances of each of the 20 common amino acids. We also created RAMmod, a related feature which uses the 3D Euclidean distance instead of sequential distance. We used RAM to predict cysteine oxidation. Again, we achieved record accuracy, with 70.3% accuracy compared to the previous best of 60.9% accuracy on the OSCTdb dataset. This work has been submitted to the Computational and Structural Biotechnology Journal.</p>
+				</div>
 
 				<div class="content">
 				  <img src="img/uDROP.png">
 						<h3>μ-DROP</h3>
-						<p>I attended the BRITE (Bioinformatics Research and Interdisciplinary Training Experience) REU at Boston University during my sophmore summer in 2017. As part of this REU, I developed Micro Droplet Rate/Region Ocular Processor for the Densmore Lab. This program takes videos of microfluidic droplet generators and automatically calculates the droplet generation rate and the droplet diameters. It operates by applying Canny's Edge detection algorithm to each frame and finding the average pixel value. The graph of these average pixel values is a sine wave. The program smoothes this resulting wave and finds the period of it in order to calculate the droplet generation rate. A rectangle is fit to the frames that correspond to the local maxes of the wave. The length of these rectangles is taken as the diameter of the droplet.</p>
-                </div>
+						<p>I attended the BRITE (Bioinformatics Research and Interdisciplinary Training Experience) REU at Boston University during my sophmore summer in 2017. As part of this REU, I developed Micro Droplet Rate/Region Ocular Processor for the Densmore Lab. This program takes videos of microfluidic droplet generators and automatically calculates the droplet generation rate and the droplet diameters. By applying Canny's Edge detection algorithm to each frame and finding the average pixel value, the program can graph a sinusoidal wave. The program smooths this resulting wave and finds the period of it in order to calculate the droplet generation rate. A rectangle is fit to the frames that correspond to the local maxes of the wave. The length of these rectangles is taken as the diameter of the droplet. The paper incorporating this work is under review at Lab on a Chip.</p>
+				</div>
 
 				<div class="content">
 				  <img src="img/INTERP.png">
 						<h3>DAFD</h3>
-						<p>For the second part of my REU at Boston University, I developed a program called DAFD (Design Automation based on Fluid Dynamics). The goal of DAFD was to take a user's desired droplet generation rate and droplet diameter and suggest chip parameters to build a droplet generator that would correctly produce their droplets. To achieve this, we made 2500 droplet generators with known chip parameters and used μ-DROP to analyze the droplet generation rate and the average droplet diameter. Then, we fit two interpolation curves (one for generation rate and one for droplet size) to the collected data set. We then used a minimization algorithm to minimize the error of our solution set to both the rate curve and the size curve.</p>
-                </div>
+						<p>For the second part of my REU at Boston University, I developed a program called DAFD (Design Automation based on Fluid Dynamics). This software suggests chip design parameters (such as flow rate, capillary number, etc.) to generate droplets at a user-specified rate and size. DAFD operates on a forward model that is built from the data collected from 𝜇-DROP. A model is built for each of our dependent variables (generation rate and size). To find a solution, we start the search at the experimental point which is closest to the desired values. Then, we use gradient descent to find the closest point on each of the two graphs such that the independent variables (the chip design parameters) satisfy both the generation rate and the droplet size. If no such pair of points exist, then we find a pair of points such that the difference between our desired values and the models’ predicted values are minimized. This tool will serve to make design of microfluidic droplet generators more efficient and accurate and will lay the pathway for future work on more microfluidic primitives.</p>
+				</div>
 
 				<div class="content">
 				  <img src="img/CENTURYLINK.jpg">
 						<h3>Data Science Internship at Century Link</h3>
 						<p>I had the opportunity to participate in a paid data science internship for CenturyLink during the spring of my junior year in 2018. During my work there, I attempted to connect several databases that existed in the CenturyLink Data Lake. When records from different databases are connected with each other, then the data becomes exponentially more powerful. For instance, if we had a database that contained customer information and a database that contained billing information that were not connected, then we would know where each customer was located and how much each customer was paying, but we would not know how much revenue each geographic region was providing for the company until we connected the databases. I developed several tools which would automatically search the databases and try to find connections to other databases in the Lake. These connections were then scored based on their likely strength and a graph was created that contained databases, tables, columns, and the links which connected them together. </p>
-                </div>
+				</div>
 
 				<div class="content">
 				  <img src="img/ROBUSTNESS.png">
 						<h3>Dynamics of Robustness in Neural Networks</h3>
 						<p>I participated in MSRP BIO (MIT's Summer Research Program in Biology) during my junior summer in 2018. During this REU, I worked in Dr. Tomaso Poggio's Lab in the McGovern Institute for Brain Research at MIT's Building 46. My project focused on understanding how and why robustness evolves in neural networks during their training regiments. "Robustness" is a measure of how resistant a neural network is to having its neurons ablated (activations clamped to zero). Like natural brains, neural networks can suffer loss of a certain amount of neurons without a dramatic detriment to function. Studying how robust a neural network is to neuron ablation is a good tool to understand how important any individual neuron is to the function of the whole network or, alternatively, the redundancy of neurons in the network. Previous research has focused on the robustness of fully-trained neural networks. By comparing the outputs of the network before and after neuron ablations at every training step, we get an estimate of the network’s robustness over time. We did several experiments in which we adjusted the architecture of the neural network, the type of data that we trained on, and the number of training examples we made the network fit. In all of our experiments, the network starts relatively robust, and then robustness dramatically decreases in the first few training steps. The network then recovers to a certain robustness which depends on various facets of the training regime such as the number of neurons in the network and the redundancy of the input data. The results that we obtained lead us to believe that robustness is related to both the data complexity and the effective capacity of the network.</p>
-                </div>
+				</div>
 
 
 			<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
@@ -198,6 +217,76 @@ table, th, td {
 						<th>Grade</th>
 					  </tr>
 						<tr>
+						<td>FUNDAMENTALS OF BIOLOGY I</td>
+						<td>3HR</td>
+						<td>A</td>
+						</tr>
+						<tr>
+						<td>BIOLOGICAL PRINCIPLES</td>
+						<td>3HR</td>
+						<td>A</td>
+						</tr>
+						<tr>
+						<td>BIOLOGICAL DIVERSITY</td>
+						<td>3HR</td>
+						<td>A</td>
+						</tr>
+						<tr>
+						<td>INTRO TO PROGRAMMING</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>INTERMEDIATE COMPUTER PROGRAMMING</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>DATA STRUCTURES</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>EMBEDDED SYSTEMS</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>OPERATING SYSTEMS</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>COMPUTER NETWORKS</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>COMPUTER NETWORK SECURITY</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>THEORY OF CYBER SCIENCE</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>ADV DATA STRUCTURES &amp; ALGORITHMS</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>DISTRIBUTED &amp; CLOUD COMPUTING</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
+						<td>SOFTWARE DESIGN AND ENGINEERING</td>
+						<td>3HR</td>
+						<td>A </td>
+						</tr>
+						<tr>
 						<td>PRECALCULUS</td>
 						<td>3HR</td>
 						<td>A </td>
@@ -228,11 +317,16 @@ table, th, td {
 						<td>A </td>
 						</tr>
 						<tr>
+						<td>STATISTICAL METHODS</td>
+						<td>3HR</td>
+						<td>A</td>
+						</tr>
 						<tr>
 						<td>INTRO TO LINEAR ALGEBRA</td>
 						<td>3HR</td>
 						<td>A </td>
 						</tr>
+						<tr>
 						<td>DISCRETE MATH</td>
 						<td>3HR</td>
 						<td>A </td>
@@ -283,59 +377,12 @@ table, th, td {
 						<td>A </td>
 						</tr>
 						<tr>
-						<td>INTRO TO PROGRAMMING</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<td>INTERMEDIATE COMPUTER PROGRAMMING</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<td>DATA STRUCTURES</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<tr>
-						<td>EMBEDDED SYSTEMS</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<td>OPERATING SYSTEMS</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<td>COMPUTER NETWORKS</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
-						<tr>
-						<td>COMPUTER NETWORK SECURITY</td>
-						<td>3HR</td>
-						<td>A </td>
-						</tr>
-						<tr>
 						<td>GENERAL PSYCHOLOGY</td>
 						<td>3HR</td>
 						<td>A </td>
 						</tr>
 						<tr>
 						<td>FOUND OF GEOGRAPHIC THOUGHT </td>
-						<td>3HR</td>
-						<td>A</td>
-						</tr>
-						<tr>
-						<td>FUNDAMENTALS OF BIOLOGY I</td>
-						<td>3HR</td>
-						<td>A</td>
-						</tr>
-						<tr>
-						<td>BIOLOGICAL PRINCIPLES</td>
 						<td>3HR</td>
 						<td>A</td>
 						</tr>
@@ -360,14 +407,24 @@ table, th, td {
 						<td>A</td>
 						</tr>
 						<tr>
+						<td>HONORS UNIVERSITY SEMINAR</td>
+						<td>1HR</td>
+						<td>A</td>
+						</tr>
+						<tr>
+						<td>FRESHMAN COMPOSITION II</td>
+						<td>3HR</td>
+						<td>A</td>
+						</tr>
+						<tr>
 						<td>FOUNDATIONS OF MODERN CIVIL</td>
 						<td>3HR</td>
 						<td>A</td>
 						</tr>
 						<tr>
-						<td>STATISTICAL METHODS</td>
+						<td>HONORS TECHNICAL WRITING</td>
 						<td>3HR</td>
-						<td>A</td>
+						<td>A </td>
 						</tr>
 					</table>
 			</div>
