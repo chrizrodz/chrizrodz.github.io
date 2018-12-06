@@ -100,13 +100,13 @@ table, th, td {
  				</div>
 
  				<div class="content">
- 				  <img src="img/HIV.png">
+ 				  <img src="img/MOLCLOCK.png">
 						<h3>Genetic Variation of HCV</h3>
 						<p>I worked with Rebecca Rose of BioInfoExperts on a study of drug users with HCV. She was using maximum-likelihood phylogenies to assess evolutionary relationships among the samples gathered. Based on the analysis, HCV infections seemed to have extremely variable mutation rates. However, a control was needed to confirm these results. I created software to mutate samples in the population according to a molecular clock. The program automatically replicated meta-data from the population (like patient ID and dates) and recreated the dataset as if a standard, constant mutation rate drove the virus mutations. The simulated dataset that my program output was put through the same pipeline as the real dataset. Then, a comparison could be made between the real behavior of the virus and the behavior of the virus assuming that it mutated according to a molecular clock. This work is currently being reviewed after submission to Infection, Genetics, and Evolution.</p>
  				</div>
 
  				<div class="content">
- 				  <img src="img/HIV.png">
+ 				  <img src="img/VOAs.png">
 						<h3>HIV VOAs</h3>
 						<p>BioInfoExperts was contracted to help with a project on quantifying the latent HIV reservoir using sequence diversity. Viral Outgrowth Assays (VOAs) separate T-cells into separate wells and then activates them so that latently infected cells will begin producing the virus. However, sometimes multiple infected cells can end up in the same well. I wrote a script to help researchers decide which wells had a single prominent sequence. The script would take in the raw reads for each well, along with meta-data from the Illumina run stored in a spreadsheet. Then, it would calculate prominence for each of the sequences, compare this to the data from the spreadsheet, and would count sequences passing user-defined thresholds. The prominent sequences were saved and aligned to a reference genome. Phylogenetic trees were calculated for these sequences and returned to the user. The paper utilizing this work was published in the Journal for Retrovirology.</p>
  				</div>
@@ -125,7 +125,7 @@ table, th, td {
 				</div>
 
 				<div class="content">
-				  <img src="img/DISULFIDE.png">
+				  <img src="img/OXIDATION.png">
 						<h3>Predicting Oxidation States of Cysteines</h3>
 						<p>When I returned from Boston, I reunited with John Mapes of the DMRL to extend our previous work with another original feature and to apply the research to a new problem. He came up with the idea for the Residue Adjacency Matrix (RAM), and we refined and implemented the idea together. The RAM matrix is an n by 20 matrix that describes the indicial difference between the cysteine and the n-nearest instances of each of the 20 common amino acids. We also created RAMmod, a related feature which uses the 3D Euclidean distance instead of sequential distance. We used RAM to predict cysteine oxidation. Again, we achieved record accuracy, with 70.3% accuracy compared to the previous best of 60.9% accuracy on the OSCTdb dataset. This work has been submitted to the Computational and Structural Biotechnology Journal.</p>
 				</div>
